@@ -1,5 +1,4 @@
----
-app-id: de.hoppfoundation.klassenzimmer 
+app-id: de.hoppfoundation.klassenzimmer
 base: org.electronjs.Electron2.BaseApp
 base-version: '20.08'
 runtime: org.freedesktop.Platform
@@ -36,12 +35,14 @@ modules:
       - rm digitales-klassenzimmer-x86_64.AppImage
 
       - cp squashfs-root/digitales-klassenzimmer.desktop de.hoppfoundation.klassenzimmer.desktop
-      - desktop-file-edit --set-icon de.hoppfoundation.klassenzimmer --set-key Exec --set-value 'digitales-klassenzimmer %u' de.hoppfoundation.klassenzimmer.desktop
+      - desktop-file-edit --set-icon de.hoppfoundation.klassenzimmer --set-key Exec
+        --set-value 'digitales-klassenzimmer %u' de.hoppfoundation.klassenzimmer.desktop
       - cp squashfs-root/digitales-klassenzimmer.png de.hoppfoundation.klassenzimmer.png
 
       - install -D digitales-klassenzimmer -t /app/bin
       - install -Dm644 de.hoppfoundation.klassenzimmer.metainfo.xml -t /app/share/metainfo
-      - install -Dm644 de.hoppfoundation.klassenzimmer.digitales-klassenzimmer.xml -t /app/share/mime/packages
+      - install -Dm644 de.hoppfoundation.klassenzimmer.digitales-klassenzimmer.xml
+        -t /app/share/mime/packages
       - install -Dm644 de.hoppfoundation.klassenzimmer.desktop -t /app/share/applications
       - install -Dm644 de.hoppfoundation.klassenzimmer.png -t /app/share/icons/hicolor/512x512/apps
 
@@ -57,10 +58,11 @@ modules:
         path: de.hoppfoundation.klassenzimmer.digitales-klassenzimmer.xml
       - type: file
         filename: digitales-klassenzimmer-x86_64.AppImage
-        url: https://github.com/HoppFoundation/jitsi-meet-electron/releases/download/v2.8.4/digitales-klassenzimmer-x86_64.AppImage
-        sha256: b9458ca30d23ea1f93f6bd86207398214b4d96e28e5ba3c2ec8bab554877d2c6
+        url: https://github.com/HoppFoundation/jitsi-meet-electron/releases/download/v2.8.5/digitales-klassenzimmer-x86_64.AppImage
+        sha256: 21d36396b5f8dcbbcaf59a2c871c61ee46ed20e8d5dcd45f2628803078cf8f8f
         x-checker-data:
           type: json
           url: https://api.github.com/repos/HoppFoundation/jitsi-meet-electron/releases/latest
-          version-query: '.tag_name | sub("^v"; "")'
-          url-query: '.assets[] | select(.name=="digitales-klassenzimmer-x86_64.AppImage") | .browser_download_url'
+          version-query: .tag_name | sub("^v"; "")
+          url-query: .assets[] | select(.name=="digitales-klassenzimmer-x86_64.AppImage")
+            | .browser_download_url
