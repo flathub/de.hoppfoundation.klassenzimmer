@@ -51,7 +51,7 @@ modules:
       - type: script
         dest-filename: digitales-klassenzimmer
         commands:
-          - zypak-wrapper /app/digitales-klassenzimmer/digitales-klassenzimmer "$@"
+          - zypak-wrapper /app/digitales-klassenzimmer/digitales-klassenzimmer.bin "$@"
       - type: file
         path: de.hoppfoundation.klassenzimmer.metainfo.xml
       - type: file
