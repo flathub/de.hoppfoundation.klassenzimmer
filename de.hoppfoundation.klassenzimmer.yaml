@@ -72,15 +72,16 @@ modules:
       - type: script
         dest-filename: digitales-klassenzimmer
         commands:
-          - zypak-wrapper /app/digitales-klassenzimmer/digitales-klassenzimmer.bin "$@"
+          - zypak-wrapper /app/digitales-klassenzimmer/digitales-klassenzimmer.bin
+            "$@"
       - type: file
         path: de.hoppfoundation.klassenzimmer.metainfo.xml
       - type: file
         path: de.hoppfoundation.klassenzimmer.digitales-klassenzimmer.xml
       - type: file
         filename: digitales-klassenzimmer-x86_64.AppImage
-        url: https://github.com/HoppFoundation/jitsi-meet-electron/releases/download/v2.8.5/digitales-klassenzimmer-x86_64.AppImage
-        sha256: 21d36396b5f8dcbbcaf59a2c871c61ee46ed20e8d5dcd45f2628803078cf8f8f
+        url: https://github.com/HoppFoundation/jitsi-meet-electron/releases/download/v2.8.6/digitales-klassenzimmer-x86_64.AppImage
+        sha256: 083795d25bb1fc25104fe47be3906a39ec00c4d7109faa5f37935e86c4b2cd00
         x-checker-data:
           type: json
           url: https://api.github.com/repos/HoppFoundation/jitsi-meet-electron/releases/latest
