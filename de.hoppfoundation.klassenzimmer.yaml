@@ -64,8 +64,8 @@ modules:
         path: de.hoppfoundation.klassenzimmer.digitales-klassenzimmer.xml
       - type: file
         filename: digitales-klassenzimmer-x86_64.AppImage
-        url: https://github.com/HoppFoundation/jitsi-meet-electron/releases/download/v2.9.0/digitales-klassenzimmer-x86_64.AppImage
-        sha256: 55d5a182411e9aec92ab4651008890348167fc0470a2eca290836187f7ea1b31
+        url: https://github.com/HoppFoundation/jitsi-meet-electron/releases/download/v2.9.1/digitales-klassenzimmer-x86_64.AppImage
+        sha256: f63c668dc2eaff4bb217fd58247c29c586b6cc2684e2ca1660bd956f8914c473
         x-checker-data:
           type: json
           url: https://api.github.com/repos/HoppFoundation/jitsi-meet-electron/releases/latest
