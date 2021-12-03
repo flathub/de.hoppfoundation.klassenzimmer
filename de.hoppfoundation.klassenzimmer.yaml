@@ -1,8 +1,8 @@
 app-id: de.hoppfoundation.klassenzimmer
 base: org.electronjs.Electron2.BaseApp
-base-version: '20.08'
+base-version: '21.08'
 runtime: org.freedesktop.Platform
-runtime-version: '20.08'
+runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
 command: digitales-klassenzimmer
 separate-locales: false
@@ -13,16 +13,15 @@ finish-args:
   - --socket=pulseaudio
   - --socket=x11
   - --socket=wayland
-  - --filesystem=xdg-run/pipewire-0
   - --talk-name=org.freedesktop.Notifications
-
-    # Until Electron 14 with the desktop-portal support
-  - --filesystem=home:ro
 
     # From Chromium source-code for screen-saver inhibition
   - --talk-name=org.gnome.SessionManager
   - --talk-name=org.freedesktop.PowerManagement
   - --talk-name=org.freedesktop.ScreenSaver
+
+    # Also used for inhibit
+  - --talk-name=org.freedesktop.login1
 modules:
   - name: unappimage
     buildsystem: simple
